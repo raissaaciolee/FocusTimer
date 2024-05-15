@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+
+    --bg-color: #FFFFFF;
+    --text-color: #323238;
+    --button-color: #E1E1E6;
+    --hover-button-color: #02799D;
+}
+
+/*Classes utilitárias*/
+body, button {
+    color: var(--text-color);
+    background-color: #E1E1E6;
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+
+    position: absolute;
+    padding: 0;
+    margin: -1px;
+    
+    overflow: hidden;
+    appearance: none;
+
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/*=====================================*/
+body {
+    background-color: var(--bg-color);
+
+    height: 100vh;
+
+    display: grid;
+    place-content: center;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+}
+
+#timer-container {
+    display: grid;
+    justify-items: center;
+}
+
+#timer {
+    font-size: 12.6rem;
+    font-weight: 500;
+}
+
+#controls {
+    display: flex;
+    gap: 4rem;
+}
+
+#controls button {
+    background-color: transparent;
+
+    font-size: 5.6rem;
+
+    border: none;
+
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+#controls button:hover{
+    transform: scale(1.1);
+}
+
+/*controls*/
+.running .ph-play-circle,
+.running .ph-timer,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle {
+    display: none;
+}
+
+/*sounds*/
+#sounds {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    gap: 3.2rem;
+}
+
+#musicButton {
+    font-size: 5.6rem;
+
+    padding: 4.8rem 4rem;
+
+    border: none;
+    border-radius: 2.4rem;
+    
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#musicButton:hover,
+.music-on { 
+    background-color: var(--hover-button-color);
+    color: white;
+
+    transform: scale(1.05);
+}
+
+@media (min-width: 1024px) {
+    #app {
+        flex-direction: row;
+        justify-items: center;
+    }
+}

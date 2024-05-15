@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temporizador estilo pomodoro">
+    <title>FocusTimer | Pomodoro</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+
+    <script type="module" src="./JavaScript/main.js" defer></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="timer-container">
+            <section id="timer">
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </section>
+    
+            <section id="controls">
+                <button data-action="toggleRunning" class="ph ph-play-circle">
+                    <span class="sr-only">Iniciar contador</span>
+                </button>
+    
+                <button data-action="toggleRunning" class="ph ph-pause-circle">
+                    <span class="sr-only">Pausar contador</span>
+                </button>
+
+                <button data-action="set" class="ph ph-timer">
+                    <span class="sr-only">Ajustar contador</span>
+                </button>
+
+                <button data-action="reset" class="ph ph-stop-circle">
+                    <span class="sr-only">Resetar contador</span>
+                </button>
+
+                <button data-action="addMinutes" class="ph ph-plus-circle">
+                    <span class="sr-only">Adicionar 5 minutos no contador</span>
+                </button>
+
+                <button data-action="removeMinutes" class="ph ph-minus-circle">
+                    <span class="sr-only">Remover 5 minutos do contador</span>
+                </button>
+            </section>
+        </div>
+
+        <section id="sounds">
+            <button data-sounds="forestSound" id="musicButton" class="ph ph-tree">
+                <span class="sr-only">Tocar som de floresta</span>
+            </button>
+
+            <button data-sounds="rainSound" id="musicButton" class="ph ph-cloud-snow">
+                <span class="sr-only">Tocar som de chuva</span>
+            </button>
+
+            <button data-sounds="coffeeShopSound" id="musicButton" class="ph ph-storefront">
+                <span class="sr-only">Tocar som de cafeteria</span>
+            </button>
+
+            <button data-sounds="fireplaceSound" id="musicButton" class="ph ph-fire-simple">
+                <span class="sr-only">Tocar som de lareira</span>
+            </button>
+        </section>
+    </div>
+</body>
+</html>
